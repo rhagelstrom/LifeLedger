@@ -424,7 +424,8 @@ function getEffectAdjustment(nodeChar)
 	if nTotalPercent and nTotalPercent ~= 0 then
 		local fields = HpManager.getHealthFields(nodeChar);
 		local nBase = DB.getValue(nodeChar, fields.base, 0);
-		nMod = math.floor((nBase + nMod) * nTotalPercent + nMod);
+		local nAdjust = DB.getValue(nodeChar, fields.adjust, 0);
+		nMod = math.floor((nBase + nAdjust + nMod) * nTotalPercent + nMod);
 	end
 	return nMod;
 end
