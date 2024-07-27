@@ -420,7 +420,12 @@ function getConAdjustment(nodeChar)
 end
 
 function getEffectAdjustment(nodeChar)
-	local nMod = EffectManager5E.getEffectsBonus(nodeChar, "MAXHP", true);
+	local nMod, _, nTotalPercent = EffectManager5E.getEffectsBonus(nodeChar, "MAXHP", true);
+	if nTotalPercent and nTotalPercent ~= 0 then
+		local fields = HpManager.getHealthFields(nodeChar);
+		local nBase = DB.getValue(nodeChar, fields.base, 0);
+		nMod = math.floor((nBase + nMod) * nTotalPercent + nMod);
+	end
 	return nMod;
 end
 
