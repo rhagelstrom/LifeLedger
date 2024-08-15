@@ -76,9 +76,7 @@ function applyDamage(rSource, rTarget, rRoll)
 		end
 	end
 
-	EffectManager.startDelayedUpdates();
 	applyDamageOriginal(rSource, rTarget, rRoll);
-	EffectManager.endDelayedUpdates();
 end
 
 function checkForTransfer(decodeResult)
