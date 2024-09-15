@@ -6,8 +6,8 @@
 local applyDwarvenToughnessOriginal;
 
 function onInit()
-	applyDwarvenToughnessOriginal = CharRaceManager.applyDwarvenToughness;
-	CharRaceManager.applyDwarvenToughness = applyDwarvenToughness;
+	applyDwarvenToughnessOriginal = CharSpeciesManager.applyDwarvenToughness;
+	CharSpeciesManager.applyDwarvenToughness = applyDwarvenToughness;
 end
 
 function applyDwarvenToughness(nodeChar, bInitialAdd)
