@@ -52,7 +52,7 @@ Icons made by Smashicons from www.flaticon.com
 		<script name="CharManagerCA" file="scripts/manager_char_ca.lua"/>
 		<script name="CharClassManagerCA" file="scripts/manager_char_class_ca.lua"/>
 		<script name="CharFeatManagerCA" file="scripts/manager_char_feat_ca.lua"/>
-		<script name="CharRacceManagerCA" file="scripts/manager_char_race_ca.lua"/>
+		<script name="CharSpeciesManagerCA" file="scripts/manager_char_species_ca.lua"/>
 		<script name="CombatManagerCA" file="scripts/manager_combat_ca.lua"/>
 		<script name="CombatRecordManagerCA" file="scripts/manager_combat_record_ca.lua"/>
 		<script name="DataSpell2" file="scripts/data_spell_ca.lua"/>
