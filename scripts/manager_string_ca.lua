@@ -1,5 +1,5 @@
--- 
--- Please see the license file included with this distribution for 
+--
+-- Please see the license file included with this distribution for
 -- attribution and copyright information.
 --
 
@@ -21,6 +21,9 @@ end
 
 function contains(set, item)
 	local result = containsOriginal(set, item);
+	if not item then
+		return result;
+	end
 	if not result and nCount > 0 then
 		for _,pattern in ipairs(set) do
 			if item:match('^' .. pattern .. '$') then
