@@ -1,5 +1,5 @@
--- 
--- Please see the license file included with this distribution for 
+--
+-- Please see the license file included with this distribution for
 -- attribution and copyright information.
 --
 
@@ -69,7 +69,7 @@ function onSourceTotalUpdate()
 		local nWounds = DB.getValue(sWounds, 0);
 		setValue(nTotal - nWounds);
 	end
-	
+
 	update();
 	bUpdating = false;
 end
@@ -114,9 +114,9 @@ function onValueChanged()
 	if sLink then
 		DB.setValue(sLink, "number", nWounds);
 	end
-	
+
 	DB.setValue(sWounds, "number", nWounds);
-	
+
 	update();
 	bUpdating = false;
 end
@@ -145,14 +145,14 @@ function setLink(dbnode, bLock)
 		DB.removeHandler(sLink, "onUpdate", onLinkUpdated);
 		sLink = nil;
 	end
-		
+
 	if dbnode then
 		sLink = dbnode.getNodeName();
 
 		if not nolinkwidget then
 			addBitmapWidget("field_linked").setPosition("bottomright", 0, -2);
 		end
-		
+
 		if bLock == true then
 			setReadOnly(true);
 		end
