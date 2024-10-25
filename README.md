@@ -1,8 +1,13 @@
-# Constitutional Amendments
+
+# Life Ledger
+
+NOTE: Upon first loading, this extension will attempt to resolve each PC's current total hitpoints into individual rolls. If there is a discrepancy detected a notification will be given upon opening the character sheet.
+
 ## Features
+
 * Adds tracking of individual values for HP gained at each level, automated modifications of HP based on constitution changes, and tracking adjustments to maximum HP.
- * Values can be seen and edited in the Class & Level window.
- * Manually changed class levels take effect after the control loses focus.
+  * Values can be seen and edited in the Class & Level window.
+  * Manually changed class levels take effect after the control loses focus.
 * Added an option to indicate whether average hitpoints should be added when level or if they should be rolled.
 * Added an option to toggle between displaying Wounds or Current Hit Points.
   * Inspired by the [Current HP](https://www.fantasygrounds.com/forums/showthread.php?44140-Current-HP-Extension-for-5E-Ruleset) extension created by Tielc and zuilin.
@@ -23,7 +28,7 @@
 
    *If one of these damage types is followed by a 'n' damage type, where n is any positive number, the secondary effect is scaled by n. E.g. `steal, '0.5'` is identical to `hsteal`.
 
-   For example a vampire's bite can be fully automated by updating the damage entry to the following: [DMG: 1d6+4 piercing + 3d6 necrotic, max, steal]. And the Life Transference spell can be automated using: 4d6 necrotic, transfer, '2'.
+   For example a vampire's bite can be fully automated by updating the damage entry to the following: [DMG: 1d6+4 piercing + 3d6 necrotic, maxhp, steal]. And the Life Transference spell can be automated using: 4d6 necrotic, transfer, '2'.
 
 * Support has been added for **MAXHP: x**, which will adjust the total maximum hit points of the bearer by x, which can dice and numbers.
 
@@ -41,17 +46,10 @@
 
 * Abilities, Class Features, Ancestral Traits, and Feats can all be configured to grant hit points (as the Tough feat, for example). Simply right click on the name of the ability's window to enable and set the desired value in the field that is shown.
 
-![Preview](.resources/ConstitutionalAmendments.png)
-
-## Installation
-Download [ConstitutionalAmendments.ext](https://github.com/rhagelstrom/ConstitutionalAmendments/releases) and place in the extensions subfolder of the Fantasy Grounds data folder.
-
-NOTE: Upon first loading, this extension will attempt to resolve each PC's current total hitpoints into individual rolls. If there is a discrepency detected a notification will be given upon opening the character sheet.
-
 ## Attribution
+
+Based off of Constitutional Amendments by MeAndUnique
+
 SmiteWorks owns rights to code sections copied from their rulesets by permission for Fantasy Grounds community development.
 'Fantasy Grounds' is a trademark of SmiteWorks USA, LLC.
 'Fantasy Grounds' is Copyright 2004-2021 SmiteWorks USA LLC.
-
-<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-<div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>

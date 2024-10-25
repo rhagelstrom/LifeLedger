@@ -114,10 +114,10 @@ function onMenuSelection(selection, subselection)
 	elseif selection == 7 then
 		if subselection == 8 then
 			ChatManager.Message(Interface.getString("message_restshort"), true, ActorManager.resolveActor(node));
-			CombatManagerCA.resetHealth(node, false);
+			CombatManagerLL.resetHealth(node, false);
 		elseif subselection == 6 then
 			ChatManager.Message(Interface.getString("message_restlong"), true, ActorManager.resolveActor(node));
-			CombatManagerCA.resetHealth(node, true);
+			CombatManagerLL.resetHealth(node, true);
 		end
 	end
 end

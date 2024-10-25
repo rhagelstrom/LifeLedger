@@ -3,7 +3,7 @@
 <!--
 MIT License
 
-Copyright (c) 2021 MeAndUnique
+Copyright (c) 2021-20224 Ryan Hagelstrom MeAndUnique
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -29,10 +29,10 @@ Icons made by Smashicons from www.flaticon.com
 
 <root release="3.0" version="3">
 	<properties>
-		<name>Feature: Constitutional Amendments</name>
+		<name>Feature: Life Ledger</name>
 		<version>dev_version</version>
 		<loadorder>140</loadorder>
-		<author>MeAndUnique-and-Tielc-and-Zuilin</author>
+		<author>MeAndUnique-rhagelstrom-Tielc-and-Zuilin</author>
 		<description>Adds a number of quality of life features concerning HP.</description>
 
 		<ruleset>
@@ -46,21 +46,21 @@ Icons made by Smashicons from www.flaticon.com
 		<!-- XML file containing new icons -->
 		<includefile source="graphics/icons.xml" />
 
-		<script name="ActionDamageCA" file="scripts/manager_action_damage_ca.lua"/>
-		<script name="ActionHealCA" file="scripts/manager_action_heal_ca.lua"/>
-		<script name="ActionRecoveryCA" file="scripts/manager_action_recovery_ca.lua"/>
-		<script name="CharManagerCA" file="scripts/manager_char_ca.lua"/>
-		<script name="CharClassManagerCA" file="scripts/manager_char_class_ca.lua"/>
-		<script name="CharFeatManagerCA" file="scripts/manager_char_feat_ca.lua"/>
-		<script name="CharSpeciesManagerCA" file="scripts/manager_char_species_ca.lua"/>
-		<script name="CombatManagerCA" file="scripts/manager_combat_ca.lua"/>
-		<script name="CombatRecordManagerCA" file="scripts/manager_combat_record_ca.lua"/>
-		<script name="DataSpell2" file="scripts/data_spell_ca.lua"/>
-		<script name="EffectManagerCA" file="scripts/manager_effect_ca.lua"/>
+		<script name="ActionDamageLL" file="scripts/manager_action_damage_ll.lua"/>
+		<script name="ActionHealLL" file="scripts/manager_action_heal_ll.lua"/>
+		<script name="ActionRecoveryLL" file="scripts/manager_action_recovery_ll.lua"/>
+		<script name="CharManagerLL" file="scripts/manager_char_ll.lua"/>
+		<script name="CharClassManagerLL" file="scripts/manager_char_class_ll.lua"/>
+		<script name="CharFeatManagerLL" file="scripts/manager_char_feat_ll.lua"/>
+		<script name="CharSpeciesManagerLL" file="scripts/manager_char_species_ll.lua"/>
+		<script name="CombatManagerLL" file="scripts/manager_combat_ll.lua"/>
+		<script name="CombatRecordManagerLL" file="scripts/manager_combat_record_ll.lua"/>
+		<script name="DataSpell2" file="scripts/data_spell_ll.lua"/>
+		<script name="EffectManagerLL" file="scripts/manager_effect_ll.lua"/>
 		<script name="HpManager" file="scripts/manager_hp.lua"/>
 		<script name="OptionsHp" file="scripts/data_options_hp.lua"/>
-		<script name="PowerManagerCA" file="scripts/manager_power_ca.lua"/>
-		<script name="StringManagerCA" file="scripts/manager_string_ca.lua"/>
+		<script name="PowerManagerLL" file="scripts/manager_power_ll.lua"/>
+		<script name="StringManagerLL" file="scripts/manager_string_ll.lua"/>
 
 		<!-- updates the npc sheet to include wounds, temp hp, adjust hp, hit dice, and death saves -->
 		<includefile source="campaign/record_npc.xml" />
@@ -90,15 +90,15 @@ Icons made by Smashicons from www.flaticon.com
 		<!-- adds a template for a number field that can toggle between showing wounds and showing current HP -->
 		<includefile source ="utility/template_hp.xml" />
 
-		<script name="PowerUpCA">
+		<script name="PowerUpLL">
 			function onInit()
 				if PowerUp then
-					PowerUp.registerExtension("Constitutional Amendments", "dev_version");
+					PowerUp.registerExtension("Life Ledger", "dev_version");
 				end
 			end
 		</script>
 	</base>
 
-	<announcement text="Constitutional Amendments dev_version for 5E by MeAndUnique.\r\nCurrent HP functionality designed and implemented by Tielc; FGU fixes by Zuilin." icon="CA_icon" font="emotefont" />
+	<announcement text="Life Ledger dev_version by rhagelstrom,MeAndUnique,Tielc,Zuilin." icon="LL_icon" font="emotefont" />
 
 </root>
