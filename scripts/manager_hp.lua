@@ -35,7 +35,9 @@ local npcFields = {
 function onInit()
 	OOBManager.registerOOBMsgHandler(OOB_MSGTYPE_ROLLHP, handleRollHp);
 	ActionsManager.registerResultHandler("hp", onHpRoll);
-
+	if RRActionManager then
+		RRActionManager.registerRollType('hp')
+	end
 	if Session.IsHost then
 		for _,node in pairs(DB.getChildren("charsheet")) do
 			firstTimeSetup(node);
@@ -296,7 +298,7 @@ function handleRollHp(msgOOB)
 	local nodeClass = DB.findNode(msgOOB.sClass);
 	if nodeClass then
 		local aDice = DB.getValue(nodeClass, "hddie");
-		local hpRoll = {sType="hp", aDice=aDice, sClass=nodeClass.getName(), sLevel=msgOOB.sLevel, nMod=0};
+		local hpRoll = {sType="hp", sDesc = '', aDice=aDice, sClass=nodeClass.getName(), sLevel=msgOOB.sLevel, nMod=0};
 		ActionsManager.roll(nodeClass.getChild("..."), nil, hpRoll, false);
 	end
 end
