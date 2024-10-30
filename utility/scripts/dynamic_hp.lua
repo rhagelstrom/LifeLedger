@@ -176,9 +176,9 @@ function updateDisplayMode()
     end
 
     bUpdating = true;
-    if bShowWounds then
+    if bShowWounds and setValue then
         setValue(DB.getValue(sWounds, 0));
-    else
+    elseif not bShowWounds and setValue then
         local nTotal = DB.getValue(sTotal, 0);
         local nWounds = DB.getValue(sWounds, 0);
         setValue(nTotal - nWounds);
