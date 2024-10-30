@@ -2,6 +2,9 @@
 -- Please see the license file included with this distribution for
 -- attribution and copyright information.
 --
+-- luacheck: globals HpManager
+-- luacheck: globals helperAddClassHP applyDraconicResilience
+
 local helperAddClassHPOriginal;
 local applyDraconicResilienceOriginal;
 

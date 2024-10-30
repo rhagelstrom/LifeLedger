@@ -2,6 +2,10 @@
 -- Please see the license file included with this distribution for
 -- attribution and copyright information.
 --
+-- luacheck: globals StringManagerLL
+-- luacheck: globals getEffectsByType getEffectsBonusByType getEffectsBonus onEffectRollEncode
+-- luacheck: globals onEffectRollDecode
+
 local getEffectsByTypeOriginal;
 local getEffectsBonusByTypeOriginal;
 local getEffectsBonusOriginal;
@@ -68,7 +72,7 @@ function onEffectRollDecode(rRoll, rEffect)
         local rEffectComp = EffectManager5E.parseEffectComp(sEffectComp);
         if rEffectComp.type == 'MAXHP' then
             local nMax = rEffectComp.mod;
-            for _, die in ipairs(rEffectComp.dice) do
+            for _, _ in ipairs(rEffectComp.dice) do
                 nMainDieIndex = nMainDieIndex + 1;
                 local nResult = (rRoll.aDice[nMainDieIndex].result or 0);
                 nMax = nMax + nResult;

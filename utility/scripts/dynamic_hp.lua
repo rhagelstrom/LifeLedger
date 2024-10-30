@@ -2,6 +2,10 @@
 -- Please see the license file included with this distribution for
 -- attribution and copyright information.
 --
+-- luacheck: globals onDrop onSourceTotalUpdate onSourceWoundsUpdate onValueChanged onLinkUpdated
+-- luacheck: globals setLink update updateDisplayMode setValue setReadOnly addBitmapWidget nolinkwidget
+-- luacheck: globals isReadOnly getValue setMaxValue sourceTotal sourceWounds
+
 local bShowWounds = true;
 local bUpdating = false;
 local sTotal;
@@ -37,7 +41,7 @@ function onClose()
     end
 end
 
-function onDrop(x, y, draginfo)
+function onDrop(_, _, draginfo)
     if Session.IsHost then
         if draginfo.getType() == 'number' then
             local node = window.getDatabaseNode();

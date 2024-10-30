@@ -2,6 +2,9 @@
 -- Please see the license file included with this distribution for
 -- attribution and copyright information.
 --
+-- luacheck: globals ActionHeal
+-- luacheck: globals modRecovery onRecoveryRoll updateEffectsTag maxRecovery
+
 local modRecoveryOriginal;
 
 function onInit()

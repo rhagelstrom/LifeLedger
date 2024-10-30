@@ -2,6 +2,8 @@
 -- Please see the license file included with this distribution for
 -- attribution and copyright information.
 --
+-- luacheck: globals resetHealth recoverHealthHelper
+
 local resetHealthOriginal;
 
 function onInit()

@@ -2,6 +2,10 @@
 -- Please see the license.txt file included with this distribution for
 -- attribution and copyright information.
 --
+-- luacheck: globals HpManager CombatManagerLL ColorManager
+-- luacheck: globals HpManager onHealthChanged changeHealthDisplay showOrHideHealthFields
+-- luacheck: globals resetMenuItems onMenuSelection hpadjust hpadjust_label
+
 function onInit()
     local node = getDatabaseNode();
     if HpManager.canHandleExtraHealthFields(node) then

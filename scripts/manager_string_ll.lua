@@ -2,6 +2,8 @@
 -- Please see the license file included with this distribution for
 -- attribution and copyright information.
 --
+-- luacheck: globals beginContainsPattern endContainsPattern contains
+
 local containsOriginal;
 local nCount = 0;
 

@@ -2,6 +2,8 @@
 -- Please see the license.txt file included with this distribution for
 -- attribution and copyright information.
 --
+-- luacheck: globals update hpadd hpicon resetMenuItems onMenuSelection
+
 local updateOriginal;
 
 function onInit()

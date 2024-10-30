@@ -2,6 +2,9 @@
 -- Please see the license file included with this distribution for
 -- attribution and copyright information.
 --
+-- luacheck: globals StringManagerLL
+-- luacheck: globals getPCPowerHealActionText parseDamagePhrase
+
 local getPCPowerHealActionTextOriginal;
 local parseDamagePhraseOriginal;
 

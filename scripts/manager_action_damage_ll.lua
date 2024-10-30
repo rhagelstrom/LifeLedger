@@ -2,6 +2,13 @@
 -- Please see the license file included with this distribution for
 -- attribution and copyright information.
 --
+-- luacheck: globals StringManagerLL HpManager
+-- luacheck: globals getDamageTypesFromString applyDamage applyDmgEffectsToModRoll
+-- luacheck: globals decodeDamageText messageDamage checkForTransfer applyMaxHeal
+-- luacheck: globals applyNPCRecovery resolveDamage resolveShared resolveMaxDamage
+-- luacheck: globals configureSharingTargets getSharingTargets checkTargetConditionals
+-- luacheck: globals tryAddSharingTarget
+
 local getDamageTypesFromStringOriginal;
 local applyDamageOriginal;
 local applyDmgEffectsToModRollOriginal;
@@ -263,7 +270,7 @@ function resolveDamage(rTarget, rRoll, rComplexDamage)
 
         if (nMax > 0) or (nSteal > 0) or (nTempSteal > 0) or (nTransfer > 0) then
             local rDamageOutput = {aDamageTypes = {[sTypes] = nDamage}, nVal = nDamage, tNotifications = {}};
-            local nDamageAdjust = ActionDamage.getDamageAdjust(rSource, rTarget, nDamage, rDamageOutput);
+            local nDamageAdjust = ActionDamage.getDamageAdjust(_, rTarget, nDamage, rDamageOutput);
             nDamageAdjust = nDamageAdjust + nDamage;
             rComplexDamage.nStolen = (rComplexDamage.nStolen or 0) + math.floor(nDamageAdjust * nSteal);
             rComplexDamage.nTempStolen = (rComplexDamage.nTempStolen or 0) + math.floor(nDamageAdjust * nTempSteal)

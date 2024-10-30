@@ -2,9 +2,23 @@
 -- Please see the license file included with this distribution for
 -- attribution and copyright information.
 --
+-- luacheck: globals RRActionManager HpManager PeasantManager CharEffectsMNM mnmSetMaxHP
+-- luacheck: globals onHpRoll firstTimeSetup resetHealth addPregenChar onImportFileSelection
+-- luacheck: globals onCharAdded onClassDeleted onHitDiceChanged onLevelChanged onRollChanged
+-- luacheck: globals onAbilityHPChanged onConstitutionChanged onCharsheetBaseHpChanged
+-- luacheck: globals onCharsheetAdjustHpChanged onCharsheetTotalHpChanged onPeasantHpChanged
+-- luacheck: globals onCombatantBaseHpChanged onCombatantAdjustHpChanged onCombatantTotalHpChanged
+-- luacheck: globals onCombatantEffectUpdated initializeTotalHitPoints recalculateTotal
+-- luacheck: globals recalculateBase getHpRoll getRollNodePath removeRolls addRolls
+-- luacheck: globals isCalculating recalculateAdjust getHealthFields hasExtraHealthFields
+-- luacheck: globals getNpcHitDice updateNpcHitDice messageDiscrepancy messageHP notifyRollHp
+-- luacheck: globals getMiscellaneousCharacterHpBonus getMiscellaneousClassHpBonus getHdInfo
+-- luacheck: globals getAverageHp beginCalculating endCalculating getConAdjustment
+-- luacheck: globals getEffectAdjustment getPeasantHp getTotalLevel getRollNodeLevel
+-- luacheck: globals canHandleExtraHealthFields
+
 OOB_MSGTYPE_ROLLHP = 'rollhp';
 
-local addInfoDBOriginal;
 local resetHealthOriginal;
 local addPregenCharOriginal;
 local onImportFileSelectionOriginal;
@@ -493,7 +507,7 @@ function getHdInfo(nodeClass)
     local nHDMult = 0;
     local nHDSides = 0;
     if aDice then
-        nHDMult = table.getn(aDice);
+        nHDMult = #aDice;
         if nHDMult > 0 then
             nHDSides = tonumber(aDice[1]:sub(2));
         end
@@ -545,7 +559,7 @@ function getHpRoll(nodeClass, bFirstLevel, nClassLevel)
             notifyRollHp(nodeClass, nClassLevel);
         else
             nValue = DiceManager.evalDice(aDice, 0, {bMax = true});
-            nValue = math.ceil((nValue + table.getn(aDice)) / 2);
+            nValue = math.ceil((nValue + #aDice) / 2);
         end
     end
     return nValue;
