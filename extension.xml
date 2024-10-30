@@ -31,7 +31,7 @@ modified by rhagelstrom with permission by CC 3.0 https://creativecommons.org/li
 <root release="3.0" version="3">
 	<properties>
 		<name>Feature: Life Ledger</name>
-		<version>dev_version</version>
+		<version>~~~dev_version~~~</version>
 		<loadorder>140</loadorder>
 		<author>rhagelstrom</author>
 		<description>Adds a number of quality of life features concerning HP.</description>
@@ -94,12 +94,12 @@ modified by rhagelstrom with permission by CC 3.0 https://creativecommons.org/li
 		<script name="PowerUpLL">
 			function onInit()
 				if PowerUp then
-					PowerUp.registerExtension("Life Ledger", "dev_version");
+					PowerUp.registerExtension("Life Ledger", "~dev_version~");
 				end
 			end
 		</script>
 	</base>
 
-	<announcement text="Life Ledger dev_version by rhagelstrom,MeAndUnique,Tielc,Zuilin." icon="LL_icon" font="emotefont" />
+	<announcement text="Life Ledger ~dev_version~ by rhagelstrom,MeAndUnique,Tielc,Zuilin." icon="LL_icon" font="emotefont" />
 
 </root>
