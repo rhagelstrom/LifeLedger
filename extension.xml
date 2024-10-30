@@ -23,8 +23,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Icons made by Freepik from www.flaticon.com
-Icons made by Smashicons from www.flaticon.com
+Icon based off of Archive Register by Delapouite.
+https://game-icons.net/1x1/delapouite/archive-register.html
+modified by rhagelstrom with permission by CC 3.0 https://creativecommons.org/licenses/by/3.0/
 -->
 
 <root release="3.0" version="3">
@@ -32,7 +33,7 @@ Icons made by Smashicons from www.flaticon.com
 		<name>Feature: Life Ledger</name>
 		<version>dev_version</version>
 		<loadorder>140</loadorder>
-		<author>MeAndUnique-rhagelstrom-Tielc-and-Zuilin</author>
+		<author>rhagelstrom</author>
 		<description>Adds a number of quality of life features concerning HP.</description>
 
 		<ruleset>
