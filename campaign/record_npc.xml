@@ -90,7 +90,7 @@
 				<sortby><field>name</field></sortby>
 				<script>
 					function onInit()
-						registerMenuItem(Interface.getString("menu_reparse_hitdice"), "action_heal", 3);
+						registerMenuItem(Interface.getString("menu_reparse_hitdice"), "radial_heal", 3);
 					end
 					function onMenuSelection(selection)
 						if selection == 3 then
@@ -243,7 +243,7 @@
 				<sortby><field>name</field></sortby>
 				<script>
 					function onInit()
-						registerMenuItem(Interface.getString("menu_reparse_hitdice"), "action_heal", 3);
+						registerMenuItem(Interface.getString("menu_reparse_hitdice"), "radial_heal", 3);
 					end
 					function onMenuSelection(selection)
 						if selection == 3 then

@@ -80,6 +80,7 @@ function onEffectRollDecode(rRoll, rEffect)
             aEffectComps[nEffectIndex] = 'MAXHP: ' .. nMax;
         end
     end
-    rEffect.nDuration = rRoll.nDuration;
+    -- Bug chat effects. Not sure how this is suppose to look, if bug here or elsewhere
+    -- rEffect.nDuration = rRoll.nDuration;
     rEffect.sName = EffectManager.rebuildParsedEffect(aEffectComps);
 end
