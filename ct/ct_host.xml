@@ -20,16 +20,15 @@
 			end
 		</script>
 		<sheetdata>
-			<!-- Shift HP and Temp right, move Wnd to where HP was -->
-			<label_ct_header_right name="label_hp">
+			<label_ct_header_right name="label_wounds" merge="delete" />
+			<label_ct_header_right name="label_wounds" insertbefore="label_temp">
+				<static textres="ct_label_wounds" />
+				<tooltip textres="ct_tooltip_wounds" />
+			</label_ct_header_right>
+			<label_ct_header_right name="label_hp" insertbefore="label_init">
 				<!-- Be more specific about Max HP -->
 				<static textres="ct_label_max" />
 				<tooltip textres="ct_tooltip_max" />
-			</label_ct_header_right>
-			<label_ct_header_right name="label_wounds" merge="delete" />
-			<label_ct_header_right name="label_wounds" insertbefore="label_init">
-				<static textres="ct_label_wounds" />
-				<tooltip textres="ct_tooltip_wounds" />
 			</label_ct_header_right>
 		</sheetdata>
 	</windowclass>
