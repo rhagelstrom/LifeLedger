@@ -45,6 +45,7 @@
 | `HD` | (D) | max | Adds (D) when the hit die is rolled.|
 | `HDMULT` | (N) | (-) | The result of a hit die roll multiplied by (N). **Note:** Extra dice added by HD effects are not multiplied, but extra flat numbers are. |
 | `HDRECOVERY` | (N) | (-) | (N) additional hit dice recovered on long rest. |
+| `MAXHP` | (D) | (-) | Adjust maximum and current HP by (D). |
 | `SHAREDMG` | (N) | (-) | (T) Damage received by an Actor shared with another Actor by proportion (N). **See Note**  |
 | `SHAREHEAL` | (N) | (-) | (T) Healing received by an Actor shared with another Actor by proportion (N). **See Note** |
 
