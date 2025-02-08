@@ -382,7 +382,15 @@ function recalculateTotal(nodeChar)
     local nConAdjustment = getConAdjustment(nodeChar);
     local nEffectHP = getEffectAdjustment(nodeChar);
     local nTotal = nBaseHP + nAdjustHP + nEffectHP + nConAdjustment;
+    local nCurrent = DB.getValue(nodeChar, fields.total, 0);
+    local nWounds = DB.getValue(nodeChar, fields.wounds, 0);
+
     DB.setValue(nodeChar, fields.total, 'number', nTotal);
+    if nCurrent - nWounds <=0 and nTotal - nWounds > 0 then
+        local rActor = ActorManager.resolveActor(nodeChar);
+        EffectManager.removeCondition(rActor, "Stable");
+		EffectManager.removeCondition(rActor, "Unconscious");
+    end
     endCalculating();
     return nTotal;
 end
