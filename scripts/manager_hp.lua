@@ -15,8 +15,7 @@
 -- luacheck: globals getMiscellaneousCharacterHpBonus getMiscellaneousClassHpBonus getHdInfo
 -- luacheck: globals getAverageHp beginCalculating endCalculating getConAdjustment
 -- luacheck: globals getEffectAdjustment getPeasantHp getTotalLevel getRollNodeLevel
--- luacheck: globals canHandleExtraHealthFields
-
+-- luacheck: globals canHandleExtraHealthFields getExhaustionAdjustment EffectsManagerExhausted
 OOB_MSGTYPE_ROLLHP = 'rollhp';
 
 local resetHealthOriginal;
@@ -382,14 +381,18 @@ function recalculateTotal(nodeChar)
     local nConAdjustment = getConAdjustment(nodeChar);
     local nEffectHP = getEffectAdjustment(nodeChar);
     local nTotal = nBaseHP + nAdjustHP + nEffectHP + nConAdjustment;
-    local nCurrent = DB.getValue(nodeChar, fields.total, 0);
-    local nWounds = DB.getValue(nodeChar, fields.wounds, 0);
 
     DB.setValue(nodeChar, fields.total, 'number', nTotal);
-    if nCurrent - nWounds <=0 and nTotal - nWounds > 0 then
+    local nExhaustionReduction = getExhaustionAdjustment(nodeChar);
+    if nExhaustionReduction >= 0 then
+        DB.setValue(nodeChar, fields.total, 'number', nTotal - nExhaustionReduction);
+    end
+    local nCurrent = DB.getValue(nodeChar, fields.total, 0);
+    local nWounds = DB.getValue(nodeChar, fields.wounds, 0);
+    if nCurrent - nWounds <= 0 and nTotal - nWounds > 0 then
         local rActor = ActorManager.resolveActor(nodeChar);
-        EffectManager.removeCondition(rActor, "Stable");
-		EffectManager.removeCondition(rActor, "Unconscious");
+        EffectManager.removeCondition(rActor, 'Stable');
+        EffectManager.removeCondition(rActor, 'Unconscious');
     end
     endCalculating();
     return nTotal;
@@ -440,6 +443,24 @@ function getConAdjustment(nodeChar)
     local nMod = ActorManager5E.getAbilityEffectsBonus(nodeChar, 'constitution')
     local nLevels = getTotalLevel(nodeChar);
     return nMod * nLevels;
+end
+
+function getExhaustionAdjustment(nodeChar)
+    local nRet = 0
+    if (EffectsManagerExhausted and not EffectsManagerExhausted.is2024()) or
+        (not EffectsManagerExhausted and not OptionsManager.isOption('GAVE', '2024')) then
+        local nMod, _, _ = EffectManager5E.getEffectsBonus(nodeChar, 'EXHAUSTION', true);
+        if nMod == 4 or nMod == 5 then
+            local fields = HpManager.getHealthFields(nodeChar);
+            local nTotal = DB.getValue(nodeChar, fields.total, 0);
+            nRet = math.floor(nTotal / 2);
+        elseif nMod >= 6 then
+            local fields = HpManager.getHealthFields(nodeChar);
+            local nTotal = DB.getValue(nodeChar, fields.total, 0);
+            nRet = nTotal;
+        end
+    end
+    return nRet;
 end
 
 function getEffectAdjustment(nodeChar)
