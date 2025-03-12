@@ -8,8 +8,8 @@
 **Current Version:** ~dev_version~
 **Updated:** ~date~
 
-> **NOTE:** Upon first loading, this extension will attempt to resolve each PC's current total hit points into individual rolls. If a discrepancy is detected, a notification will appear upon opening the character sheet. This extension disables editing of max hit points, which are auto-calculated and should never be altered. Temporary adjustments to max hit points can be performed using adjusted hit points. To resolve discrepancies in max hit points, refer to the image below.
-> ![Fix Discrepancy](.resources/discrepancy.png "Fix")
+> **NOTE:** Upon first loading, this extension will attempt to resolve each PC's current total hit points into individual rolls. If a discrepancy is detected, a notification will appear upon opening the character sheet. This extension disables editing of max hit points, which are auto-calculated and should never be altered. Temporary adjustments to max hit points can be performed using adjusted hit points. To resolve discrepancies in max hit points, refer to the image below or in the associated Forge images for this extension.
+> ![Fix Discrepancy]([.resources/discrepancy.png](https://github.com/rhagelstrom/LifeLedger/blob/main/.resources/discrepancy.png) "Fix")
 
 ## Features
 
